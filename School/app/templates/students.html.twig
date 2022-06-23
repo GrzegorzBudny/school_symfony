@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Result!{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        <h1 style="text-align: center">{{ caption_tab }}</h1>
+        <br/>
+        <table class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Imie</th>
+                <th scope="col">Nazwisko</th>
+                <th scope="col">Płeć</th>
+                <th scope="col">Klasa</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            {% for record in result_table %}
+                <tr>
+                    <td>{{record.name}}</td>
+                    <td>{{record.surname}}</td>
+                    <td>{{record.sex}}</td>
+                    <td>{{record.ClassName}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br/>
+        <input type="button" class="btn btn-dark" value="Wstecz" onClick="history.back();" />
+        <footer class="py-3 my-4">
+            <hr/>
+            <p class="text-center text-muted"> 2022 Grzegorz Budny</p>
+        </footer>
+    </div>
+{% endblock %}

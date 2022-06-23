@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Main!{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+            <h1 style="text-align: center">Projekt rekrutacyjny</h1>
+            <form action="/result" method="POST">
+                <br/>
+                <h4>Wybierz klasę: </h4>
+                <select style="background-color: dimgrey;color: white" class="form-select" aria-label="Default select example" name="stud_sex">
+                    {% for se in class %}
+                        <option value="{{se}}">{{se}}</option>
+                    {% endfor %}
+                </select>
+                <br/>
+                <h4>Wybierz płeć ucznia: </h4>
+                <select style="background-color: dimgrey;color: white" class="form-select" aria-label="Default select example" name="school_class">
+                    {% for class in school %}
+                        <option value="{{class}}">{{class}}</option>
+                    {% endfor %}
+                </select>
+                <br/>
+                <h4>Wybierz zapytanie: </h4>
+                <label>
+                    <input type="radio" class="form-check-input" name="query" value="1" checked> Pokaż wszystkich uczniów z danej klasy posortowanych po płci
+                </label>
+                <br/>
+                <label>
+                    <input type="radio" class="form-check-input" name="query" value="2"> Pokaż wszystkich wychowawców szkoły z informacją, do których klas są przypisani
+                </label>
+                <br/>
+                <label>
+                    <input type="radio" class="form-check-input" name="query" value="3"> Pokaż wszystkich uczniów danej klasy
+                </label>
+                <br/>
+                <br/>
+                <br/>
+                <input type="submit" class="btn btn-dark" value = "Wyslij"/>
+            </form>
+        <footer class="py-3 my-4">
+            <hr/>
+            <p class="text-center text-muted"> 2022 Grzegorz Budny</p>
+        </footer>
+    </div>
+
+{% endblock %}
