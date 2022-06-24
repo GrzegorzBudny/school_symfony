@@ -1,4 +1,4 @@
-# Query school database
+# School symfony
 
 The main page allows you to select options that later customize the query to mysql database and display the result.
 
