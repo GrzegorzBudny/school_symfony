@@ -15,6 +15,7 @@ docker-compose up -d --build
 - PHP 8.0
 - MySQL 8.0
 - Bootstrap 5.0
+- Docker 4.9
 - Nginx stable-alpine
 - phpmyadmin 5.2
 
